@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans  
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<!-- <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd"> -->
+
+	<bean id="si" class="com.workouts.setterinjection.Test">
+		<!-- Dependency Injection -->
+		<property name="gender" value="Mr."/>
+		<!-- 
+			<property name="gender">
+				<value>Mr.</value>
+				<value>Mr.</value> // This is invalid, only one setter method you should inject, duplicate. 
+			</property>
+			<property name="gender"> // This is invalid, only one setter method you should inject, duplicate.
+				<value>Mr.</value> 
+			</property>
+			
+		 -->
+	</bean>
+	
+	<bean id="sip" class="com.workouts.setterinjection.Test">
+		<!-- Without setter or constructor, the object will be created using 
+		default constructor, default constructor we don't need to declare, it is available
+		by default.  -->
+	</bean>
+	
+	<!-- 
+		I. Types of Dependency Injection
+		
+			1. Setter method
+			
+			2. Constructor (Parameterized)
+		
+		II. Types of Data we can inject
+		
+			1. Primitive
+				* Can treat String(Secondary) as primitive
+				* If a class required values, it can be treated as primitive types
+			2. Secondary 
+			
+			3. Primitive arrays
+			
+			4. Secondary arrays
+			
+			5. Collections
+		III. The only restriction we have for setter dependency injection is we should not override.
+	 -->
+</beans>

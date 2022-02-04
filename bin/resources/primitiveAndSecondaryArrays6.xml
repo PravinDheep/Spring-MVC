@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans  
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+		<bean id="e1" class="com.workouts.primitiveAndSecondaryArrays6.Engine">
+			<property name="modelYear"><value>2014</value></property>
+		</bean>
+		
+		<bean id="e2" class="com.workouts.primitiveAndSecondaryArrays6.Engine">
+			<property name="modelYear"><value>2015</value></property>
+		</bean>
+		
+		<bean id="e3" class="com.workouts.primitiveAndSecondaryArrays6.Engine">
+			<property name="modelYear"><value>2016</value></property>
+		</bean>
+		
+		<bean id="c" class="com.workouts.primitiveAndSecondaryArrays6.Car">
+			<property name="carNames" >
+				<list><!-- Primitive Array -->
+					<value>Audi</value>
+					<value>Benz</value>
+					<value>BMW</value>
+				</list>
+			</property>
+			
+			<property name="engines" >
+				<list><!-- Secondary Array -->
+					<ref bean="e1"/>
+					<ref bean="e2"/>
+					<ref bean="e3"/>
+				</list>
+			</property>
+		</bean>
+		
+</beans>

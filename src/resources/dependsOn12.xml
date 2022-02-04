@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.springframework.org/schema/beans
+	  http://www.springframework.org/schema/beans/spring-beans.xsd">
+	  
+	  <bean id="a" class="com.workouts.dependsOn12.A" depends-on="b" />
+	  
+	  <bean id="b" class="com.workouts.dependsOn12.B" depends-on="c" />
+	  
+	  <bean id="c" class="com.workouts.dependsOn12.C" />
+	  
+	  <!-- The class is dependent on other class. Here, mutual dependency should not be there, for example b class is dependent on c, so for c class, we should
+	  not add depends-on="b". 
+	  
+	  ** Object creation will be on order when depends-on is not used. -->
+	  
+</beans>

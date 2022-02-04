@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:util="http://www.springframework.org/schema/util" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   							http://www.springframework.org/schema/beans/spring-beans.xsd
+	   						 http://www.springframework.org/schema/util
+	   						 	http://www.springframework.org/schema/util/spring-util.xsd">
+	   <!-- 
+	   		Schema Based Configuration supports only j2ee container(ApplicationContext ap = new ClassPathXmlApplicationContext()), 
+		 	it doesn't support core container(BeanFactory b = new XmlBeanFactory(r)).
+	    -->
+	   	
+	   <bean id="t" class="com.workouts.requiredCollectionDependencyInjection8.Test">
+	   		<property name="fruits">
+	   			<util:list list-class="java.util.Vector">
+	   				<value>Apple</value>
+					<value>Grapes</value>
+					<value>Orange</value>
+	   			</util:list>
+	   		</property>
+	   		
+	   		<property name="cricketers">
+	   			<util:set set-class="java.util.TreeSet">
+	   				<value>Sachin</value>
+					<value>Ganguly</value>
+					<value>Yuvaraj</value>
+	   			</util:set>
+	   		</property>
+	   		
+	   		<property name="countriesandcapitals">
+	   			<util:map map-class="java.util.HashMap">
+	   				<entry key="India" value="New Delhi" />
+					<entry key="United States" value="Washington D.C." />
+					<entry key="Australia" value="Canberra" />
+	   			</util:map>
+	   		</property>
+	   </bean>
+</beans>

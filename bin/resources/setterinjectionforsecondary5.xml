@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans  
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Object Reference // Pass by reference -->
+	<!-- <bean id="SIFS" class="com.workouts.setterinjectionforsecondary.Car">
+		<property name="carName" value="Audi" />
+		<property name="engine" ref="engine" /> // Can use ref (or) child tag ref-bean="engine"
+	</bean>
+	
+	<bean id="engine" class="com.workouts.setterinjectionforsecondary.Engine">
+		<property name="model" value="2017" />
+	</bean> -->
+	
+	<!-- Object (Inner Class Object) -->
+	<bean id="SIFS" class="com.workouts.setterinjectionforsecondary.Car">
+		<property name="carName" value="Audi" />
+		
+		<property name="engine">
+			<bean class="com.workouts.setterinjectionforsecondary.Engine">
+				<property name="model" value="2017" />
+			</bean>	
+		</property>
+	</bean>
+	
+	
+	
+	<!-- 
+		Test t = new Test();
+		t.method(new A()); // directly passing object instance, cannot refer another classes.
+		A a = new A();
+		t.method(a); // Passing object reference, can refer another classes.
+		Even in this XML we can do like this, either we can pass object or object reference
+	
+	 -->
+	
+	
+</beans>

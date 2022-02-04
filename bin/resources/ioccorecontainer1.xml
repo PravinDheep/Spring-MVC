@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans  
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<!-- <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd"> -->
+
+    		
+	<bean id="tioc" class="com.workouts.ioccontainer.Test" scope="singleton"/>
+	<!-- In case of web applications, we can use request,session and context along with this. -->
+	
+	<!-- 
+		IOC Container can
+		
+		1. Read xml inputs and validate xml inputs
+		
+		2. Create, Instantiate pojo classes
+		
+		3. Can manage life cycles of pojo classes
+		
+		4. Read data from xml file, that data we can supply input to 
+			dependent classes(pojo classes) - DI(Dependency Injection)
+			
+			Dependecy Injection - Passing required data to a pojo class(object) through
+				configuration files(xml).
+	 -->
+	
+</beans>

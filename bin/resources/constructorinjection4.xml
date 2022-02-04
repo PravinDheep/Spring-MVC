@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans  
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		<!-- <asdf!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd"> -->
+		
+	<bean id="ci" class="com.workouts.constructorinjection.Test">
+		<!-- Constructor Dependency Injection -->
+		<constructor-arg value="Mrs."/>
+		<!-- 
+			<constructor-arg>
+				<value>Mrs. </value>
+			</constructor-arg>
+		 -->
+	</bean>
+	
+	<bean id="cin" class="com.workouts.constructorinjection.Test">
+		<constructor-arg type="int" value="123"/>
+	</bean>
+	
+	<bean id="cit" class="com.workouts.constructorinjection.Test">
+		<constructor-arg value="333"/>
+		<constructor-arg value="333"/> <!-- In case, if we call second
+		constructor-arg value, it will assign to two argument constructors (str, int) here.  
+		-->
+	</bean>
+	
+	<bean id="cite" class="com.workouts.constructorinjection.Test">
+		<!-- <constructor-arg value="Mr."/>
+		<constructor-arg value="Male"/>
+		<constructor-arg value="22" /> -->
+		<!--  Either we can pass parameters in order to assign to parameter constructors in order
+					(or)
+			  We can use type parameter in constructor-arg to differentiate string, int data types -->
+		<!-- <constructor-arg type="String" value="Mr."/>
+		<constructor-arg type="String" value="Male"/>
+		<constructor-arg type="int" value="22" /> -->
+		 <!-- Here, two Strings doesn't know in which parameter(titleOfAddress,gender) to assign, we
+		 can go with index parameter. -->
+		 <constructor-arg index="0" value="Mr."/>
+		<constructor-arg index="1" value="Male"/>
+		<constructor-arg index="2" value="22" />
+		<!-- Can override when index is used -->
+		<!-- <constructor-arg index="2" value="32" /> Didn't work -->
+		<!--  VALUE CAN BE USED ONLY FOR PRIMITIVE TYPE, IN CASE OF SECONDARY DATA TYPES(COMMUNICATION ADDRESS OBJECT OR ARRAYS OR COLLECTIONS ETC) NEED TO USE REF ATTRIBUTE -->
+	</bean>
+	
+	<!--  Without declaring constructor, if you try to create object, it will
+		  create by using default constructor.
+		  
+		  We don't have any name attribute in constructor-arg, only value is passed
+		  
+		  If you pass one single constructor-arg, it will call one argument constructor
+		  
+		  By default, it search for string constructor only, if we use other datatypes
+		  we will have to mention in the constructor-arg using Type attribute.
+		  
+		  In constructor-arg, you can take more than one argument as values.		  
+     -->	
+</beans>

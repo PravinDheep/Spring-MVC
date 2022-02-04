@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   				http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   
+	   <bean id="c" class="com.workouts.setterMandatoryDependencyCheck11.Car">
+	   
+	   </bean>
+	   
+	   <!--
+	   
+	   		<bean id="c" class="com.workouts.setterMandatoryDependencyCheck11.Car" dependency-check="none">
+	   		</bean>
+	   
+	   		The Dependency check is used to make the setter field having the values mandatory.
+	   		By default, dependency check is none, it can have the values, none, simple, objects, all.
+	   		simple is used for primitive type(int, long, float etc) dependency-check. objects is used 
+	   		for secondary type (Object, Arrays, Collection) dependency-check.
+	   		
+	   		**** Deprecated from Spring 3.0, can use @Required annotation in setter level
+	   		instead of dependency-check.
+	   		
+	   		
+	   		**** @Required is also deprecated in Spring 5.1, if a field is mandatory, you have to use
+	   		constructor injection, for optional we can go with setter injection.
+	   		
+	   		**** To activate required annotation, we need a class
+	   		<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+	   		
+	   		The disadvantage of dependency-check attribute is, when we declare it as simple, we need to inject values
+	   		for all the primitive fields, if we have only one field as mandatory, here all fields will have to pass
+	   		values. this is not recommended, we can use @Required for specefic field.
+	   -->
+</beans>

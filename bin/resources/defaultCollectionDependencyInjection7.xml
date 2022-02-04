@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	 		
+		<bean id="t" class="com.workouts.defaultCollectionDependencyInjection7.Test">
+			<property name="fruits">
+				<list> <!-- By Default this will consider as ArrayList -->
+					<value>Apple</value>
+					<value>Grapes</value>
+					<value>Orange</value>
+				</list>
+			</property>
+			
+			<property name="cricketers">
+				<set> <!-- By Default this will consider as LinkedHashSet -->
+					<value>Sachin</value>
+					<value>Ganguly</value>
+					<value>Yuvaraj</value>
+				</set>
+			</property>
+			
+			<property name="countriesandcapitals">
+				<map> <!-- By Default this will consider as LinkdHashMap -->
+					<entry key="India" value="New Delhi" />
+					<entry key="United States" value="Washington D.C." />
+					<entry key="Australia" value="Canberra" />
+				</map>
+			</property>
+		</bean>
+		
+</beans>
